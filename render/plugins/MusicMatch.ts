@@ -42,10 +42,14 @@ export class MusicMatch extends SearchLyrics {
 
             try {
                 let lyric = this.parseContent(body);
-                return cb(null, lyric);
+                return cb(null, lyric, url);
             } catch (e) {
                 cb("Music match fail parsing getSong");
             }
         });
+    }
+
+    public getName(): string {
+      return 'MusixMatch';
     }
 }
